@@ -73,7 +73,7 @@
   },
   "scripts": {
     "test": "node_modules/.bin/mocha",
-    "lint": "node_modules/.bin/eslint -c .eslintrc.json lib"
+    "lint": "node_modules/.bin/eslint -c .eslintrc.json lib --fix"
   },
   "license": "MIT",
   "engines": {
