@@ -3,9 +3,6 @@ textract
 
 A text extraction node module.
 
-[![NPM](https://nodei.co/npm/textract.png?compact=true)](https://nodei.co/npm/textract/)
-[![NPM](https://nodei.co/npm-dl/textract.png)](https://nodei.co/npm/textract/)
-
 ## Currently Extracts...
 
 * HTML, HTM
@@ -35,7 +32,7 @@ _Does textract not extract from files of the type you need?_  Add an issue or su
 ## Install
 
 ```
-npm install textract
+npm i @nosferatu500/textract
 ```
 
 ## Extraction Requirements
