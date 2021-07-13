@@ -1,18 +1,21 @@
 {
-  "name": "textract",
-  "version": "2.5.0",
-  "homepage": "https://github.com/dbashford/textract",
-  "author": "David Bashford",
+  "name": "@nosferatu500/textract",
+  "version": "3.0.0",
+  "homepage": "https://github.com/nosferatu500/textract",
   "description": "Extracting text from files of various type including html, pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf, text/*, and various open office.",
   "contributors": [
     {
       "name": "David Bashford",
       "email": "dbashford@hotmail.com"
+    },
+    {
+      "name": "Vitalii Shvetsov",
+      "email": "vitalya199529@gmail.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbashford/textract"
+    "url": "https://github.com/nosferatu500/textract"
   },
   "keywords": [
     "textract",
@@ -76,6 +79,9 @@
     "lint": "node_modules/.bin/eslint -c .eslintrc.json lib --fix"
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=8.10"
   },
