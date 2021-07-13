@@ -1,44 +1,44 @@
 /* eslint-disable max-len, no-unused-expressions */
 /* global fromUrl */
 
-var nodeUrl = require( 'url' );
+var nodeUrl = require('url');
 
-describe( 'fromUrl tests', function() {
+describe('fromUrl tests', function () {
   var test;
 
-  this.timeout( 3000 );
+  this.timeout(3000);
 
-  it( 'will properly extract files from sites with extensions that are misleading', function( done ) {
+  it('will properly extract files from sites with extensions that are misleading', function (done) {
     var url = 'http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1276';
-    fromUrl( url, function( error, text ) {
-      expect( error ).to.be.null;
-      expect( text ).to.be.an( 'string' );
-      expect( text.substring( 0, 100 ) ).to.eql(
-        ' Washington State Legislature Bill Summary 2017-2018 2015-2016 2013-2014 2011-2012 2009-2010 2007-20' );
+    fromUrl(url, function (error, text) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0, 100)).to.eql(
+        ' Washington State Legislature Bill Summary Search by Bill or Initiative Number Bill Initiative 2021-');
       done();
     });
   });
 
-  it( 'take object URL', function( done ) {
+  it('take object URL', function (done) {
     var url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/doc.doc?raw=true'
-      , urlObj = nodeUrl.parse( url )
+      , urlObj = nodeUrl.parse(url)
       ;
 
-    fromUrl( urlObj, function( error, text ) {
-      expect( error ).to.be.null;
-      expect( text ).to.be.an( 'string' );
-      expect( text.substring( 0, 100 ) ).to.eql( ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s' );
+    fromUrl(urlObj, function (error, text) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0, 100)).to.eql('Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa');
       done();
     });
   });
 
-  test = function( ext, name, _text ) {
-    it( 'will ' + ext + ' files', function( done ) {
+  test = function (ext, name, _text) {
+    it('will ' + ext + ' files', function (done) {
       var url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/' + name + '?raw=true';
-      fromUrl( url, function( error, text ) {
-        expect( error ).to.be.null;
-        expect( text ).to.be.an( 'string' );
-        expect( text.substring( 0, 100 ) ).to.eql( _text );
+      fromUrl(url, function (error, text) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0, 100)).to.eql(_text);
         done();
       });
     });
@@ -47,7 +47,7 @@ describe( 'fromUrl tests', function() {
   test(
     'doc',
     'doc.doc',
-    ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
+    'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
   );
 
   test(
@@ -131,7 +131,7 @@ describe( 'fromUrl tests', function() {
   test(
     'ots',
     'ots.ots',
-    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is "
+    "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is "
   );
 
   test(

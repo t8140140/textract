@@ -3,28 +3,28 @@ var fs = require("fs")
   , mime = require("mime")
   ;
 
-var test = function(_testFunction, withMime) {
+var test = function (_testFunction, withMime) {
 
   var testFunction;
 
-  beforeEach(function() {
+  beforeEach(function () {
     testFunction = _testFunction();
   });
 
-  var _test = function(ext, name, _text) {
-    it('will ' + ext + ' files', function(done) {
-      var docPath = path.join( __dirname, "files", name);
+  var _test = function (ext, name, _text) {
+    it('will ' + ext + ' files', function (done) {
+      var docPath = path.join(__dirname, "files", name);
       var textBuff = fs.readFileSync(docPath);
 
       testFunction(
-        (withMime) ? mime.getType( docPath ) : docPath,
-        textBuff, function( error, text ) {
+        (withMime) ? mime.getType(docPath) : docPath,
+        textBuff, function (error, text) {
 
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql(_text);
-        done();
-      });
+          expect(error).to.be.null;
+          expect(text).to.be.an('string');
+          expect(text.substring(0, 100)).to.eql(_text);
+          done();
+        });
     });
   };
 
@@ -37,7 +37,7 @@ var test = function(_testFunction, withMime) {
   _test(
     "doc",
     "doc.doc",
-    " Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s"
+    "Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa"
   );
 
   _test(
@@ -121,7 +121,7 @@ var test = function(_testFunction, withMime) {
   _test(
     "ots",
     "ots.ots",
-    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is "
+    "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is "
   );
 
   _test(
@@ -150,10 +150,10 @@ var test = function(_testFunction, withMime) {
 
 };
 
-describe('textract fromBufferWithName', function() {
-  test(function(){ return global.fromBufferWithName }, false);
+describe('textract fromBufferWithName', function () {
+  test(function () { return global.fromBufferWithName }, false);
 });
 
-describe('textract fromBufferWithMime', function() {
-  test(function(){ return global.fromBufferWithMime }, true);
+describe('textract fromBufferWithMime', function () {
+  test(function () { return global.fromBufferWithMime }, true);
 });
