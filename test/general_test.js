@@ -23,7 +23,7 @@ describe( 'textract', function() {
       var filePath = 'foo/bar/foo.txt';
       fromFileWithPath( filePath, function( error, text ) {
         expect( text ).to.be.null;
-        expect( error ).to.be.an( 'object' );
+        expect( error ).to.be.an( 'error' );
         expect( error.message ).to.be.an( 'string' );
         expect( error.message ).to.eql( 'File at path [[ ' + filePath + ' ]] does not exist.' );
         done();
@@ -34,7 +34,7 @@ describe( 'textract', function() {
       var filePath = path.join( __dirname, 'files', 'MxAgCrProd.ppt' );
       fromFileWithPath( filePath, function( error, text ) {
         expect( text ).to.be.null;
-        expect( error ).to.be.an( 'object' );
+        expect( error ).to.be.an( 'error' );
         expect( error.message ).to.be.an( 'string' );
         expect( error.typeNotFound ).to.be.true;
         expect( error.message.substring( 0, 61 ) ).to.eql( 'Error for type: [[ application/vnd.ms-powerpoint ]], file: [[' );

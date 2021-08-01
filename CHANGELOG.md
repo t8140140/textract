@@ -1,3 +1,6 @@
+### 3.0.1
+* Bump deps.
+
 ### 3.0.0
 * Bump deps.
 * [#192](https://github.com/dbashford/textract/pull/192). Header and footer extracted from .odt.
