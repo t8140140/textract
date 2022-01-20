@@ -531,7 +531,7 @@ describe("textract", function () {
             fromFileWithPath(filePath, function (error, text) {
                 expect(error).to.be.null;
                 expect(text).to.be.a("string");
-                expect(text).to.eql('console.log("javascript is cooler than you")');
+                expect(text).to.eql('console.log("javascript is cooler than you");');
                 done();
             });
         });
