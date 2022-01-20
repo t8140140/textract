@@ -1,6 +1,6 @@
-global.expect = require('chai').expect;
+global.expect = require("chai").expect;
 
-var textract = require('../lib');
+var textract = require("../lib");
 
 global.textract = textract;
 global.fromBufferWithName = textract.fromBufferWithName;

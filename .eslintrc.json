@@ -1,25 +1,99 @@
 {
-    "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:sonarjs/recommended"
+  ],
+  "plugins": ["prettier", "import", "sonarjs", "promise", "unicorn"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
     "rules": {
-      "space-in-parens": ["error", "always", { "exceptions": ["{}"] }],
-      "comma-style": ["error", "first", { "exceptions": { "ArrayExpression": true, "ObjectExpression": true } }],
-      "comma-dangle": ["error", "only-multiline"],
-      "space-before-function-paren": ["error", "never"],
-      "func-names": 0,
-      "no-param-reassign": 0,
-      "one-var-declaration-per-line": ["error", "initializations"],
-      "no-underscore-dangle": 0,
-
-      // es6
-      "object-shorthand": 0,
-      "one-var": ["error", "always"],
-      "no-var": 0,
-      "prefer-template": 0,
-      "prefer-arrow-callback": 0,
-      "prefer-rest-params": 0
+       // Disabled
+       "no-console": "off",
+       "no-continue": "off",
+       "no-plusplus": "off",
+       "no-case-declarations": "off",
+       "no-prototype-builtins": "off",
+       "no-restricted-syntax": "off",
+       "no-param-reassign": "off",
+ 
+       "import/prefer-default-export": "off",
+       "import/no-default-export": "off",
+       "import/no-extraneous-dependencies": "off",
+       "import/named": "off",
+       "import/no-named-as-default": "off",
+ 
+       "unicorn/prevent-abbreviations": "off",
+       "unicorn/filename-case": "off",
+       "unicorn/no-useless-undefined": "off",
+       "unicorn/prefer-node-protocol": "off",
+ 
+       "sonarjs/cognitive-complexity": "off",
+ 
+       //Modified
+       "require-atomic-updates": "warn",
+       "curly": ["warn", "multi-line", "consistent"],
+       "no-use-before-define": [
+         "error",
+         { "functions": false, "classes": true, "variables": true }
+       ],
+       "sort-imports": [
+         "error",
+         {
+           "ignoreDeclarationSort": true
+         }
+       ],
+       
+       "import/no-unresolved": ["error", { "commonjs": true, "amd": true }],
+       "import/export": "error",
+       "import/order": [
+         "error",
+         {
+           "alphabetize": { "order": "asc", "caseInsensitive": true },
+           "groups": [
+             "builtin",
+             "external",
+             "internal",
+             "parent",
+             "sibling",
+             "index",
+             "object"
+           ],
+           "newlines-between": "never",
+           "pathGroups": [
+             {
+               "pattern": "react",
+               "group": "builtin",
+               "position": "before"
+             }
+           ],
+           "pathGroupsExcludedImportTypes": ["builtin"]
+         }
+       ],
+       
+       "sonarjs/max-switch-cases": ["warn", 50]
+     },
+     "settings": {
+       "import/extensions": [".js"],
+       "import/resolver": {
+         "node": {
+           "extensions": [".js", ".json"],
+           "paths": ["lib", "test"]
+         }
+       }
     },
     "env": {
-      "mocha": true
+      "mocha": true,
+      "browser": true,
+      "shared-node-browser": true,
+      "node": true,
+      "es2021": true
     },
     "globals": {
       "expect": true
