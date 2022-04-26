@@ -70,7 +70,7 @@ describe("fromUrl tests", function () {
 
     test("markdown", "test.md", " This is an h1 This is an h2 This text has been bolded and italicized ");
 
-    test("ods", "ods.ods", "This,is,a,ods Really,it,is, I,promise,, ");
+    test("ods", "ods.ods", "This,is,a,ods Really,it,is, I,promise,,");
 
     test(
         "xml",
@@ -90,7 +90,7 @@ describe("fromUrl tests", function () {
 
     test("ott", "ott.ott", "This is a document template, yay templates! Woo templates get me so excited!");
 
-    test("ots", "ots.ots", "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
+    test("ots", "ots.ots", "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is");
 
     test("odg", "odg.odg", "This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
 

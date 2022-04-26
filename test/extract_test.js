@@ -287,7 +287,7 @@ describe("textract", function () {
             fromFileWithPath(filePath, function (error, text) {
                 expect(error).to.be.null;
                 expect(text).to.be.an("string");
-                expect(text).to.eql("This is the value of PI:,3.141592 ");
+                expect(text).to.eql("This is the value of PI:,3.141592");
                 done();
             });
         });
@@ -767,7 +767,7 @@ describe("textract", function () {
     test(
         "ods",
         "ods.ods",
-        "This,is,a,ods Really,it,is, I,promise,, ",
+        "This,is,a,ods Really,it,is, I,promise,,",
         "This,is,a,ods\nReally,it,is,\nI,promise,,\n\n\n"
     );
 
@@ -804,7 +804,7 @@ describe("textract", function () {
     test(
         "ots",
         "ots.ots",
-        "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
+        "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is",
         "This,is, template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n\n\n"
     );
 
