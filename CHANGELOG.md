@@ -1,3 +1,7 @@
+### 3.1.0
+* Bump deps.
+* NodeJS >= 16.
+
 ### 3.0.1
 * Bump deps.
 
