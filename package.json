@@ -1,6 +1,6 @@
 {
   "name": "@nosferatu500/textract",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "homepage": "https://github.com/nosferatu500/textract",
   "description": "Extracting text from files of various type including html, pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf, text/*, and various open office.",
   "contributors": [
@@ -99,7 +99,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "bin": {
     "textract": "./bin/textract"
