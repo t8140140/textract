@@ -1,6 +1,6 @@
 {
   "name": "@nosferatu500/textract",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "homepage": "https://github.com/nosferatu500/textract",
   "description": "Extracting text from files of various type including html, pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf, text/*, and various open office.",
   "contributors": [
@@ -59,14 +59,14 @@
     "printWidth": 120
   },
   "dependencies": {
-    "@xmldom/xmldom": "^0.8.2",
+    "@xmldom/xmldom": "^0.8.6",
     "cheerio": "1.0.0-rc.12",
     "epub2": "1.3.8",
     "got": "^11.8.5",
     "html-entities": "^2.3.3",
     "iconv-lite": "0.6.3",
     "jschardet": "3.0.0",
-    "marked": "^4.0.18",
+    "marked": "^4.2.2",
     "meow": "^9.0.0",
     "mime": "3.0.0",
     "pdf-text-extract": "1.5.0",
@@ -76,23 +76,23 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^8.22.0",
+    "eslint": "^8.27.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-sonarjs": "^0.15.0",
-    "eslint-plugin-unicorn": "^43.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "eslint-plugin-unicorn": "^44.0.2",
     "mocha": "^9.2.2",
     "prettier": "^2.7.1"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha",
     "prettier": "prettier --write '{lib,test}/**/*.js'",
-    "lint": "yarn prettier && node_modules/.bin/eslint -c .eslintrc.json lib --fix"
+    "lint": "yarn prettier && node_modules/.bin/eslint -c .eslintrc.json lib"
   },
   "license": "MIT",
   "publishConfig": {
