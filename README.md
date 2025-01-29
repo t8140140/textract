@@ -48,7 +48,7 @@ Note, if any of the requirements below are missing, textract will run and extrac
 ## Configuration
 
 Configuration can be passed into textract.  The following configuration options are available
-
+* `preserveSpacing`: In case a PDF is formatted with multiple columns, textract will remove all spacing and formatting. If this option is set to `true`, textract will try to preserve spacing and formatting. By default this is `false`.
 * `preserveLineBreaks`: When using the command line this is set to `true` to preserve stdout readability. When using the library via node this is set to `false`. Pass this in as `true` and textract will not strip any line breaks.
 * `preserveOnlyMultipleLineBreaks`: Some extractors, like PDF, insert line breaks at the end of every line, even if the middle of a sentence. If this option (default `false`) is set to `true`, then any instances of a single line break are removed but multiple line breaks are preserved. Check your output with this option, though, this doesn't preserve paragraphs unless there are multiple breaks.
 * `exec`: Some extractors (dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
