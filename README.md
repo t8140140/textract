@@ -32,7 +32,7 @@ _Does textract not extract from files of the type you need?_  Add an issue or su
 ## Install
 
 ```
-npm i @nosferatu500/textract
+npm i @t8140140/textract
 ```
 
 ## Extraction Requirements
